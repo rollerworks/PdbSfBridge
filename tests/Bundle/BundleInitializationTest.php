@@ -36,7 +36,7 @@ final class BundleInitializationTest extends KernelTestCase
         /** @var TestKernel $kernel */
         $kernel = parent::createKernel($options);
         $kernel->addTestCompilerPass(new class implements CompilerPassInterface {
-            public function process(ContainerBuilder $container)
+            public function process(ContainerBuilder $container): void
             {
                 $container->findDefinition('rollerworks_pdb.pdb_manager')->setPublic(true);
             }
