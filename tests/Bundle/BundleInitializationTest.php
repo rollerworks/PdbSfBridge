@@ -111,4 +111,14 @@ final class BundleInitializationTest extends KernelTestCase
         $service = $container->get('rollerworks_pdb.pdb_manager');
         $this->assertInstanceOf(StaticPdpManager::class, $service);
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        while (get_exception_handler() !== null) {
+            restore_exception_handler();
+        }
+    }
+
 }
