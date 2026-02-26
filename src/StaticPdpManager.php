@@ -70,7 +70,7 @@ class StaticPdpManager implements PdpManager
         $this->topLevelDomainListCache->remember(ResourceUri::TOP_LEVEL_DOMAIN_LIST_URI, TopLevelDomains::fromPath($this->topLevelDomainList));
     }
 
-    public function populateCaches(string $publicSuffixList, $topLevelDomainList): void
+    public function populateCaches(string $publicSuffixList, string $topLevelDomainList): void
     {
         $this->publicSuffixListCache->remember(ResourceUri::PUBLIC_SUFFIX_LIST_URI, Rules::fromPath($publicSuffixList));
         $this->topLevelDomainListCache->remember(ResourceUri::TOP_LEVEL_DOMAIN_LIST_URI, TopLevelDomains::fromPath($topLevelDomainList));
